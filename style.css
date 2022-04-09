@@ -1,1 +1,3 @@
-devinhouse-m1-projeto1
+#cross-out[type=checkbox]:checked + label{
+    text-decoration: line-through;
+}
