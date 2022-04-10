@@ -12,33 +12,54 @@
 </head>
 
 <body>
-    <header>
-        <h1>
-            Padaria Caffe <i class="fa-solid fa-mug-saucer"></i><i class="fa-solid fa-pizza-slice"></i>Pizza
-        </h1>
+    <header id="header">
+        <h1>Padaria Café & Pizza</h1>
+        <i class="fa-solid fa-mug-saucer"></i>
+        <i class="fa-solid fa-pizza-slice"></i>
     </header>
-    <main>
-        <div id="container">
-            <h2>Adicionar produto à lista:</h2>
+    <main id="main">
+        <div class="container1">
+            <h2>Adicionar à lista</h2>
             <form>
-                <input id="input" type="text" placeholder="adicione um item aqui.." />
-                <button class="btn" type="button">Adicionar</button>
+                <input id="input-form" type="text" placeholder="Faça seu pedido aqui...">
+                <button id="btn-form" type="button">Adicionar</button>
             </form>
-
-
         </div>
-        <div id="list">
-            <h3>Lista de compras</h3>
-            <!-- <ul>
-                <li><input type="checkbox" id="cross-out"><label>Café Preto</label><i class="fa-regular fa-circle-xmark"></i></li>
-                <li><input type="checkbox">Refrigerante de limão</li>
-                <li><input type="checkbox">Pizza</li>
-                <li><input type="checkbox">Bolo de leite ninho</li>
-            </ul>
-            <h4>Total das Compras: </h4>
-            <p>R$ 0,00</p> -->
+        <div class="container2">
+            <div id="container-main">
+                <div class="container-list">
+                    <h3>Lista de pedidos: </h3>
+                    <ul>
+                        <li id="cross-out">
+                            <input id="check" type="checkbox">Pizza
+                            <button id="btn-xmark">
+                                <i class="fa-solid fa-rectangle-xmark"></i></button>
+                        </li>
+                        <li id="cross-out">
+                            <input id="check" type="checkbox">Pão doce
+                            <button id="btn-xmark">
+                                <i class="fa-solid fa-rectangle-xmark"></i></button>
+                        </li>
+                        <li id="cross-out">
+                            <input id="check" type="checkbox">Pão Francês
+                            <button id="btn-xmark">
+                                <i class="fa-solid fa-rectangle-xmark"></i></button>
+                        </li>
+                        <li id="cross-out">
+                            <input id="check" type="checkbox">Esfirra
+                            <button id="btn-xmark">
+                                <i class="fa-solid fa-rectangle-xmark"></i></button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="container-total">
+                    <h4>Total de pedidos:</h4>
+                    <p>R$ 0,00</p>
+                </div>
+            </div>
         </div>
     </main>
+
     <script src="script.js"></script>
 </body>
 
