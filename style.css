@@ -107,6 +107,11 @@ li {
   display: flex;
   justify-content: space-between;
 }
+
+#check:checked + label {
+  text-decoration: line-through;
+}
+
 #btn-xmark {
   background-color: transparent;
   border: none;
