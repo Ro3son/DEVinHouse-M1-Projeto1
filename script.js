@@ -1,59 +1,49 @@
 const button = document.querySelector('#btn-form');
 button.addEventListener('click', () => {
-    adicionaLista();
+  adicionaLista();
 });
 
-const adicionaLista = () => {
+const adicionaLista = (input, label, button, div) => {
 
-    const inputItem = document.getElementById('input-form');
+const inputItem = document.getElementById('input-form');
 
-    const li = document.createElement("li");
-    li.id = 'listItem';
-    li.innerHTML = `<input id='checked' type='checkbox'/>
-    <label>${inputItem.value}</label>
-    <button id="btn-xmark">
-        <i class="fa-solid fa-rectangle-xmark"></i>
-    </button>
+const li = document.createElement('li');
+li.id = "listItem";
 
-    <div class="container-confirm">
-        <input id="inputHidden" type="number" />
-        <button id="btnHidden" type="submit">Confirmar Valor</button>
-    </div>
-    `;
-    document.querySelector('ul').appendChild(li);
-    document.querySelector('ul').style.backgroundColor = 'lightslategrey';
-    
-    // popUp();
-    // rabiscaLista();
-    deletaLista();
+li.append(...[
+  input = document.createElement('input'),
+  label = document.createElement('label'),
+  button = document.createElement('button'),
+  div = document.createElement('div')
+  ]);
 
-}
-// const rabiscaLista = () => {
-//     const checked = document.querySelectorAll('#check');
-//     for(let check of checked) {
-//         check.addEventListener('click', function() {
-//             document.querySelector('span').style.textDecoration = 'line-through';
-//         });
-//     }
-// };
-const deletaLista = () => {
-    const buttons = document.querySelectorAll('#btn-xmark');
-    for (let btn of buttons) {
-        btn.addEventListener('click', function() {
-            this.parentElement.remove();
-        });
-    };
+  console.log(li);
+
+  input.setAttribute('type', 'checkbox');
+  input.id = 'checked';
+
+  label.textContent = (`${inputItem.value}`);
+
+  button.id = 'btn-xmark';
+  button.innerHTML = `
+  <i class='fa-solid fa-rectangle-xmark'></i>`;
+
+  div.className = 'container-confirm';
+  div.innerHTML = `
+  <input id="inputHidden" type="number" />
+  <button id="btnHidden" type="submit">Confirmar Valor</button>`;
+
+  document.querySelector('ul').appendChild(li);
+  document.querySelector('ul').style.backgroundColor = 'lightslategrey';
+
 };
-// const popUp = () => {
-//     const checks = document.querySelectorAll('#checked');
-//     for(let check of checks) {
-//         check.addEventListener('click', function() {
-//             if (this.checked) {
-//                 document.querySelector('.container-confirm').style.display = 'flex';
-//             } else {
-//                  document.querySelector('.container-confirm').style.display = 'none';
-//             }
-            
-//         });
-//     }
-// };
+
+const riscaLista = () => {
+
+};
+const deletaLista = () => {
+
+};
+const popUp = () => {
+
+};
