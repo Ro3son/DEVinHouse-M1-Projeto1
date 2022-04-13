@@ -15,13 +15,6 @@ label com conteúdo sendo o valor de entrada, um button para deletar a lista.
 
 Palavras chaves: innerHTML, createElement, append, range.createContextualFragment
 
-
-  let documentFragment = document.createRange().createContextualFragment(`<i class='fa-solid fa-rectangle-xmark'></i>`);
-  button.append(documentFragment);
-
-  https://stackoverflow.com/questions/36798005/append-multiple-items-in-javascript/45215917
-
-
 Subproblema II
 
 O usuário pode riscar o texto digitado marcando a checkbox.
