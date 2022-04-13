@@ -104,7 +104,7 @@ h3 {
 ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   padding: 8px;
   gap: 1em;
   border-radius: 10px;
@@ -112,22 +112,23 @@ ul {
 }
 
 li {
-  display: flex;
-  justify-content: center;
-  gap: 1em;
   color: #d9eee1;
 }
 
 input:checked+label {
   text-decoration: line-through;
 }
-
+label {
+  font-size: 1.3em;
+  padding: 6px;
+}
 input[type="checkbox"] {
   font-size: 1em;
-  width: 1.4em;
-  height: 1.4em;
+  width: 1.2em;
+  height: 1.2em;
   border: 2px solid #000;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 #btn-xmark {
@@ -156,6 +157,17 @@ input[type="checkbox"] {
   border-radius: 10px;
 }
 
-/* .container-confirm {
-  display: none;
-} */
+.container-confirm {
+  display: flex;
+  gap: 0.5em;
+  padding: 12px;
+}
+#inputHidden {
+  border: 2px solid #000;
+  padding: 4px;
+}
+#btnHidden {
+  border: 2px solid #000;
+  padding: 4px;
+  cursor: pointer;
+}
