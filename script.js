@@ -3,18 +3,18 @@ button.addEventListener('click', () => {
   adicionaLista();
 });
 
-const adicionaLista = (input, label, button, div) => {
+const adicionaLista = (input, label, button) => {
 
-const inputItem = document.getElementById('input-form');
+  const inputItem = document.getElementById('input-form');
 
-const li = document.createElement('li');
-li.id = "listItem";
+  const li = document.createElement('li');
+  li.id = "listItem";
 
-li.append(...[
-  input = document.createElement('input'),
-  label = document.createElement('label'),
-  button = document.createElement('button'),
-  div = document.createElement('div')
+  li.append(...[
+    input = document.createElement('input'),
+    label = document.createElement('label'),
+    button = document.createElement('button')
+
   ]);
 
   console.log(li);
@@ -28,13 +28,28 @@ li.append(...[
   button.innerHTML = `
   <i class='fa-solid fa-rectangle-xmark'></i>`;
 
-  div.className = 'container-confirm';
-  div.innerHTML = `
-  <input id="inputHidden" type="number" />
-  <button id="btnHidden" type="submit">Confirmar Valor</button>`;
-
   document.querySelector('ul').appendChild(li);
   document.querySelector('ul').style.backgroundColor = 'lightslategrey';
+
+  const inputNumber = document.createElement('input'),
+    button2 = document.createElement('button');
+
+  inputNumber.id = 'inputHidden';
+  inputNumber.setAttribute('type', 'number');
+  inputNumber.setAttribute('placeholder', 'Digite o valor');
+
+  button2.id = 'btnHidden';
+  button2.textContent = 'Confirmar';
+  button2.setAttribute('type', 'submit');
+
+  // const span = document.createElement('span');
+  // span.textContent = (`${inputItem.value}`);
+  // document.querySelector('#h3').append(span);
+
+  document.querySelector('.container-price-div').append(inputNumber);
+  document.querySelector('.container-price-div').append(button2);
+  document.querySelector('.container-price-div').style.backgroundColor = 'lightslategrey';
+
 
 };
 
