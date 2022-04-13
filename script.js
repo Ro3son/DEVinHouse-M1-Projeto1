@@ -50,13 +50,27 @@ const adicionaLista = (input, label, button) => {
   document.querySelector('.container-price-div').append(button2);
   document.querySelector('.container-price-div').style.backgroundColor = 'lightslategrey';
 
+  deletaLista();
+  riscaLista();
+};
 
+const deletaLista = (buttons) => {
+
+  buttons = document.querySelectorAll('#btn-xmark');
+
+  for (let btn of buttons) {
+
+    btn.addEventListener('click', remove);
+
+    function remove() {
+
+      this.parentElement.remove();
+
+    };
+  };
 };
 
 const riscaLista = () => {
-
-};
-const deletaLista = () => {
 
 };
 const popUp = () => {
