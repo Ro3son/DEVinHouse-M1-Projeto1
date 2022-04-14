@@ -16,20 +16,21 @@ const adicionaLista = (input, label, button) => {
     button = document.createElement('button')
 
   ]);
-
-  console.log(li);
+  console.log(input);
 
   input.setAttribute('type', 'checkbox');
+  input.setAttribute('name', 'checklist');
   input.id = 'checked';
 
   label.textContent = (`${inputItem.value}`);
+  label.setAttribute('for', 'checked');
 
   button.id = 'btn-xmark';
   button.innerHTML = `
   <i class='fa-solid fa-rectangle-xmark'></i>`;
 
   document.querySelector('ul').appendChild(li);
-  document.querySelector('ul').style.backgroundColor = 'lightslategrey';
+  document.querySelector('ul').style.backgroundColor = '#2b2a33';
 
   const inputNumber = document.createElement('input'),
     button2 = document.createElement('button');
@@ -48,7 +49,7 @@ const adicionaLista = (input, label, button) => {
 
   document.querySelector('.container-price-div').append(inputNumber);
   document.querySelector('.container-price-div').append(button2);
-  document.querySelector('.container-price-div').style.backgroundColor = 'lightslategrey';
+  document.querySelector('.container-price-div').style.backgroundColor = '#2b2a33';
 
   deletaLista();
   riscaLista();
@@ -70,9 +71,22 @@ const deletaLista = (buttons) => {
   };
 };
 
-const riscaLista = () => {
+const riscaLista = (boxes) => {
 
+    boxes = document.querySelectorAll('#checked');
+    console.log(boxes);
+    for (let box of boxes ) {
+
+      box.addEventListener('change', function(value) {
+         let checkbox = (value=this.checked) ?
+            document.querySelector('label').style.textDecoration = 'line-through' :
+            document.querySelector('label').style.textDecoration = 'none';
+            console.log(checkbox);
+      }); 
+    };
+    
 };
+
 const popUp = () => {
 
 };
