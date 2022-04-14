@@ -16,7 +16,6 @@ const adicionaLista = (input, label, button) => {
     button = document.createElement('button')
 
   ]);
-  console.log(input);
 
   input.setAttribute('type', 'checkbox');
   input.setAttribute('name', 'checklist');
@@ -32,28 +31,23 @@ const adicionaLista = (input, label, button) => {
   document.querySelector('ul').appendChild(li);
   document.querySelector('ul').style.backgroundColor = '#2b2a33';
 
-  const inputNumber = document.createElement('input'),
-    button2 = document.createElement('button');
-
-  inputNumber.id = 'inputHidden';
-  inputNumber.setAttribute('type', 'number');
-  inputNumber.setAttribute('placeholder', 'Digite o valor');
-
-  button2.id = 'btnHidden';
-  button2.textContent = 'Confirmar';
-  button2.setAttribute('type', 'submit');
-
-  // const span = document.createElement('span');
-  // span.textContent = (`${inputItem.value}`);
-  // document.querySelector('#h3').append(span);
-
-  document.querySelector('.container-price-div').append(inputNumber);
-  document.querySelector('.container-price-div').append(button2);
-  document.querySelector('.container-price-div').style.backgroundColor = '#2b2a33';
-
+  riscaLista();
   deletaLista();
   checkList();
-  riscaLista();
+  confirmaValor();
+  
+};
+
+const riscaLista = (inputs) => {
+  inputs = document.querySelectorAll('input[type="checkbox"]');
+  for (let input of inputs) {
+    input.addEventListener('click', riscaLista);
+    function riscaLista() {
+      let risca = (this.checked) ?
+        this.nextElementSibling.style.textDecoration = 'line-through' :
+        this.nextElementSibling.style.textDecoration = 'none';
+    };
+  }
 };
 
 const deletaLista = (buttons) => {
@@ -68,23 +62,32 @@ const deletaLista = (buttons) => {
 
 const checkList = (inputs) => {
   inputs = document.querySelectorAll('input[type="checkbox"]'); // retorna um nodelist
-  for (let value of inputs) {
-    value.addEventListener('click', checked);
+  console.log(inputs);
+  for (let input of inputs) {
+    input.addEventListener('click', checked);
     function checked() {
-      let checkbox = (this.checked) ?
+      let confirmaValor = (this.checked) ?
         document.querySelector('.container-price-div').style.display = 'block' :
         document.querySelector('.container-price-div').style.display = 'none';
     };
   };
 };
 
-const riscaLista = (inputs) => {
-  inputs = document.querySelectorAll('input[type="checkbox"]');
-  for (let check of inputs) {
-    check.addEventListener('click', function () {
-      let crossOut = (this.checked) ?
-        document.querySelector('label').style.textDecoration = 'line-through' :
-        document.querySelector('label').style.textDecoration = 'none';
-    });
-  };
+const confirmaValor = (input, button) => {
+
+  input = document.createElement('input');
+  button = document.createElement('button');
+
+  input.id = 'inputHidden';
+  input.setAttribute('type', 'number');
+  input.setAttribute('placeholder', 'Digite o valor');
+
+  button.id = 'btnHidden';
+  button.textContent = 'Confirmar';
+  button.setAttribute('type', 'submit');
+
+  document.querySelector('.container-price-div').append(input);
+  document.querySelector('.container-price-div').append(button);
+  document.querySelector('.container-price-div').style.backgroundColor = '#2b2a33';
+
 };
