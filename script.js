@@ -52,41 +52,39 @@ const adicionaLista = (input, label, button) => {
   document.querySelector('.container-price-div').style.backgroundColor = '#2b2a33';
 
   deletaLista();
+  checkList();
   riscaLista();
 };
 
 const deletaLista = (buttons) => {
-
   buttons = document.querySelectorAll('#btn-xmark');
-
   for (let btn of buttons) {
-
     btn.addEventListener('click', remove);
-
     function remove() {
-
       this.parentElement.remove();
-
     };
   };
 };
 
-const riscaLista = (boxes) => {
-
-    boxes = document.querySelectorAll('#checked');
-    console.log(boxes);
-    for (let box of boxes ) {
-
-      box.addEventListener('change', function(value) {
-         let checkbox = (value=this.checked) ?
-            document.querySelector('label').style.textDecoration = 'line-through' :
-            document.querySelector('label').style.textDecoration = 'none';
-            console.log(checkbox);
-      }); 
+const checkList = (inputs) => {
+  inputs = document.querySelectorAll('input[type="checkbox"]'); // retorna um nodelist
+  for (let value of inputs) {
+    value.addEventListener('click', checked);
+    function checked() {
+      let checkbox = (this.checked) ?
+        document.querySelector('.container-price-div').style.display = 'block' :
+        document.querySelector('.container-price-div').style.display = 'none';
     };
-    
+  };
 };
 
-const popUp = () => {
-
+const riscaLista = (inputs) => {
+  inputs = document.querySelectorAll('input[type="checkbox"]');
+  for (let check of inputs) {
+    check.addEventListener('click', function () {
+      let crossOut = (this.checked) ?
+        document.querySelector('label').style.textDecoration = 'line-through' :
+        document.querySelector('label').style.textDecoration = 'none';
+    });
+  };
 };
