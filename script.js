@@ -61,23 +61,26 @@ const deletaLista = (buttons) => {
 };
 
 const checkList = (inputs) => {
-  inputs = document.querySelectorAll('input[type="checkbox"]'); // retorna um nodelist
-  console.log(inputs);
+  inputs = document.querySelectorAll('input[type="checkbox"]');
+  console.log(inputs);           
   for (let input of inputs) {
     input.addEventListener('click', checked);
     function checked() {
-      let confirmaValor = (this.checked) ?
+      let check = (this.checked) ?
         document.querySelector('.container-price-div').style.display = 'block' :
         document.querySelector('.container-price-div').style.display = 'none';
     };
   };
 };
 
-const confirmaValor = (input, button) => {
+const confirmaValor = (form, input, button) => {
 
-  input = document.createElement('input');
-  button = document.createElement('button');
-
+  form = document.createElement('form');
+  form.append(...[
+  input = document.createElement('input'),
+  button = document.createElement('button')
+  ]);
+  
   input.id = 'inputHidden';
   input.setAttribute('type', 'number');
   input.setAttribute('placeholder', 'Digite o valor');
@@ -86,8 +89,7 @@ const confirmaValor = (input, button) => {
   button.textContent = 'Confirmar';
   button.setAttribute('type', 'submit');
 
-  document.querySelector('.container-price-div').append(input);
-  document.querySelector('.container-price-div').append(button);
+  document.querySelector('.container-price-div').append(form);
   document.querySelector('.container-price-div').style.backgroundColor = '#2b2a33';
 
 };
