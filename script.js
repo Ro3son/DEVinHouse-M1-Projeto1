@@ -1,20 +1,22 @@
-const button = document.querySelector('#btn-form');
+const button = document.querySelector('#button-form');
 button.addEventListener('click', () => {
   adicionaLista();
+  clearInput();
 });
 
-const adicionaLista = (input, label, button) => {
+const adicionaLista = () => {
 
   const inputItem = document.getElementById('input-form');
+  
+  let input, label, button; // Variáveis para criar elementos //
 
   const li = document.createElement('li');
   li.id = "listItem";
 
-  li.append(...[
+  li.append(...[            // Criando e anexando elementos na tag <li> //
     input = document.createElement('input'),
     label = document.createElement('label'),
     button = document.createElement('button')
-
   ]);
 
   input.setAttribute('type', 'checkbox');
@@ -31,27 +33,37 @@ const adicionaLista = (input, label, button) => {
   document.querySelector('ul').appendChild(li);
   document.querySelector('ul').style.backgroundColor = '#2b2a33';
 
-  riscaLista();
+  document.querySelectorAll('#confirm-form').forEach((form) => { form.remove() });
+
+  riscaLabel();
   deletaLista();
   checkList();
   confirmaValor();
-  
+
 };
 
-const riscaLista = (inputs) => {
-  inputs = document.querySelectorAll('input[type="checkbox"]');
+const  clearInput = () => {
+  const inputItem = document.getElementById('input-form').value='';
+};
+
+const riscaLabel = () => {
+
+  const inputs = document.querySelectorAll('#checked');
+
   for (let input of inputs) {
-    input.addEventListener('click', riscaLista);
-    function riscaLista() {
+    input.addEventListener('click', riscaLabel);
+    function riscaLabel() {
       let risca = (this.checked) ?
         this.nextElementSibling.style.textDecoration = 'line-through' :
         this.nextElementSibling.style.textDecoration = 'none';
     };
-  }
+  };
 };
 
-const deletaLista = (buttons) => {
-  buttons = document.querySelectorAll('#btn-xmark');
+const deletaLista = () => {
+
+  const buttons = document.querySelectorAll('#btn-xmark');
+
   for (let btn of buttons) {
     btn.addEventListener('click', remove);
     function remove() {
@@ -60,27 +72,42 @@ const deletaLista = (buttons) => {
   };
 };
 
-const checkList = (inputs) => {
-  inputs = document.querySelectorAll('input[type="checkbox"]');
-  console.log(inputs);           
+const checkList = () => {
+
+  const inputs = document.querySelectorAll('#checked');
+
   for (let input of inputs) {
     input.addEventListener('click', checked);
     function checked() {
+
       let check = (this.checked) ?
-        document.querySelector('.container-price-div').style.display = 'block' :
-        document.querySelector('.container-price-div').style.display = 'none';
+        document.querySelector('.container-value-div').style.display = 'block' : 
+        document.querySelector('.container-value-div').style.display = 'none';
+
+        input.addEventListener('change', function() {
+        const span = document.createElement('span');
+          span.id = 'confirm-span';
+          span.setAttribute('style', 'color: #d9eee1');
+          span.textContent = (`${this.nextElementSibling.innerText}`); // label //
+
+        document.querySelectorAll('#confirm-span').forEach((span) => { span.remove() }); // Limpa saída span //
+        document.querySelector('#h3').append(span);
+      });
     };
   };
 };
 
-const confirmaValor = (form, input, button) => {
+const confirmaValor = () => {
 
-  form = document.createElement('form');
+  let input, button;
+
+  const form = document.createElement('form');
   form.append(...[
-  input = document.createElement('input'),
-  button = document.createElement('button')
-  ]);
-  
+    input = document.createElement('input'),
+    button = document.createElement('button')]);
+
+  form.id = 'confirm-form';
+
   input.id = 'inputHidden';
   input.setAttribute('type', 'number');
   input.setAttribute('placeholder', 'Digite o valor');
@@ -89,7 +116,7 @@ const confirmaValor = (form, input, button) => {
   button.textContent = 'Confirmar';
   button.setAttribute('type', 'submit');
 
-  document.querySelector('.container-price-div').append(form);
-  document.querySelector('.container-price-div').style.backgroundColor = '#2b2a33';
+  document.querySelector('.container-value-div').append(form);
+  document.querySelector('.container-value-div').style.backgroundColor = '#2b2a33';
 
 };
