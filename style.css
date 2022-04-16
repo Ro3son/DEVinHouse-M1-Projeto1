@@ -79,6 +79,7 @@ form {
   cursor: pointer;
   font-size: 1em;
 }
+
 #buttonAdd:hover {
   background-color: #ff6347;
 }
@@ -99,7 +100,7 @@ form {
   margin: 12px;
   padding: 8px;
   height: 40%;
-  width: 40%;
+  width: 50%;
   border-radius: 10px;
 }
 
@@ -119,6 +120,7 @@ ul {
   list-style-type: none;
   color: #d9eee1;
 }
+
 label {
   font-size: 1.3em;
   padding: 6px;
@@ -150,7 +152,7 @@ input[type="checkbox"] {
   color: #ff6347;
 }
 
-.container-total {
+.container-value {
   font-family: Arial;
   font-size: 1em;
   margin: 12px;
@@ -160,15 +162,6 @@ input[type="checkbox"] {
   border-radius: 10px;
 }
 
-.container-value {
-  font-family: Arial;
-  font-size: 1em;
-  margin: 12px;
-  padding: 8px;
-  height: 40%;
-  width: 40%;
-  border-radius: 10px;
-}
 .container-value-div {
   display: none;
   margin: auto;
@@ -178,6 +171,7 @@ input[type="checkbox"] {
 #confirm-span {
   visibility: hidden;
 }
+
 #inputHidden {
   border: 2px solid #000;
   font-size: 1em;
@@ -191,21 +185,37 @@ input[type="checkbox"] {
   padding: 4px;
   cursor: pointer;
 }
+
 #btnHidden:hover {
   background-color: #ff6347;
 }
+
+.container-total {
+  font-family: Arial;
+  font-size: 1em;
+  margin: 12px;
+  padding: 8px;
+  height: 40%;
+  width: 40%;
+  border-radius: 10px;
+}
+
 .descValor {
   border-radius: 10px;
 }
+
 .paragraph {
   padding: 10px;
 }
+
 #paragraph {
   padding: 4px;
 }
+
 .btnTotal {
   padding: 12px;
 }
+
 #buttonTotal {
   display: flex;
   margin: auto;
@@ -214,6 +224,7 @@ input[type="checkbox"] {
   padding: 4px;
   cursor: pointer;
 }
+
 #buttonTotal:hover {
   background-color: #ff6347;
 }
