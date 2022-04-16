@@ -37,7 +37,6 @@ const adicionaLista = () => {
     checkList();
     confirmaValor();
     limpaInput();
-
   });
 };
 adicionaLista();
@@ -69,7 +68,7 @@ const deletaLista = () => {
     btn.addEventListener('click', remove);
     function remove() {
       this.parentElement.remove();  // remove <li> da função adicionaLista() //
-      // document.querySelector('#confirm-span').remove(); // remove <span> da função confirmaValor() //
+      document.querySelector('#confirm-span').remove(); // remove <span> da função confirmaValor() //
     };
   };
 };
@@ -85,7 +84,7 @@ const checkList = () => {
         document.querySelector('.container-value-div').style.display = 'block' :
         document.querySelector('.container-value-div').style.display = 'none';
 
-      input.addEventListener('change', function() {
+      input.addEventListener('change', function () {
         const span = document.createElement('span');
         span.id = 'confirm-span';
         span.setAttribute('style', 'color: #d9eee1');
@@ -95,7 +94,7 @@ const checkList = () => {
         document.querySelector('#h3').append(span);
       });
 
-      input.addEventListener('change', function() {
+      input.addEventListener('change', function () {
         let visibleSpan = (this.checked) ?
           document.querySelector('#confirm-span').style.visibility = 'visible' :
           document.querySelector('#confirm-span').style.visibility = 'hidden';
@@ -126,25 +125,33 @@ const confirmaValor = () => {
   document.querySelector('.container-value-div').append(form);
   document.querySelector('.container-value-div').style.backgroundColor = '#2b2a33';
 
-  total();
-
-};
-
-const total = () => {
-
   const btnConfirmar = document.querySelector('#btnHidden');
   btnConfirmar.addEventListener('click', function () {
 
     const inputNumber = document.getElementById('inputHidden');
 
+    let span;
+
     const p = document.createElement('p');
     p.id = 'paragraph';
-    p.setAttribute('style', 'color: #ff6347');
-    p.textContent = `R$ ${parseFloat(inputNumber.value).toFixed(2)}`;
-    
-    // document.querySelectorAll('p').forEach((paragraph) => paragraph.remove());
-    document.querySelector('.container-total').appendChild(p);
-    
-    limpaInput(); // Limpa digite o valor //
+    p.setAttribute('style', 'color: #44ce7b');
+    p.textContent = `${h3.firstElementChild.innerText} R$ `;
+
+    p.append(...[
+      span = document.createElement('span')
+    ])
+
+    span.id = 'span-valor';
+    span.textContent = `${parseFloat(inputNumber.value).toFixed(2)}`;
+
+    document.querySelector('.paragraph').appendChild(p);
+    document.querySelector('.descValor').style.backgroundColor = '#2b2a33';
+
+    limpaInput(); // Limpa saída  //
+    valorTotal();
   });
+};
+
+const valorTotal = () => {
+
 };
