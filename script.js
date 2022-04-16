@@ -81,12 +81,11 @@ const checkList = () => {
   for (let input of inputs) {
     input.addEventListener('click', checked);
     function checked() {
-
       let check = (this.checked) ?
         document.querySelector('.container-value-div').style.display = 'block' :
         document.querySelector('.container-value-div').style.display = 'none';
 
-      input.addEventListener('change', function () {
+      input.addEventListener('change', function() {
         const span = document.createElement('span');
         span.id = 'confirm-span';
         span.setAttribute('style', 'color: #d9eee1');
@@ -96,8 +95,7 @@ const checkList = () => {
         document.querySelector('#h3').append(span);
       });
 
-      input.addEventListener('change', function () {
-
+      input.addEventListener('change', function() {
         let visibleSpan = (this.checked) ?
           document.querySelector('#confirm-span').style.visibility = 'visible' :
           document.querySelector('#confirm-span').style.visibility = 'hidden';
@@ -143,9 +141,10 @@ const total = () => {
     p.id = 'paragraph';
     p.setAttribute('style', 'color: #ff6347');
     p.textContent = `R$ ${parseFloat(inputNumber.value).toFixed(2)}`;
-
+    
+    // document.querySelectorAll('p').forEach((paragraph) => paragraph.remove());
     document.querySelector('.container-total').appendChild(p);
-
+    
     limpaInput(); // Limpa digite o valor //
   });
 };
