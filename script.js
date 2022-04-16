@@ -1,16 +1,16 @@
 const adicionaLista = () => {
 
-  const button = document.querySelector('#buttonAdd');  // Add Event button 'Adicionar' //
+  const button = document.querySelector('#buttonAdd');
   button.addEventListener('click', () => {
 
     const inputItem = document.getElementById('inputAdd');
 
-    let input, label, button; // Variáveis para criar elementos //
+    let input, label, button;
 
     const li = document.createElement('li');
     li.id = "listItem";
 
-    li.append(...[            // Criando e anexando elementos na tag <li> //
+    li.append(...[
       input = document.createElement('input'),
       label = document.createElement('label'),
       button = document.createElement('button')
@@ -24,8 +24,7 @@ const adicionaLista = () => {
     label.setAttribute('for', 'checked');
 
     button.id = 'btn-xmark';
-    button.innerHTML = `
-  <i class='fa-solid fa-rectangle-xmark'></i>`;
+    button.innerHTML = `<i class='fa-solid fa-rectangle-xmark'></i>`;
 
     document.querySelector('ul').append(li);
     document.querySelector('ul').style.backgroundColor = '#2b2a33';
@@ -162,20 +161,15 @@ const valorTotal = () => {
   const button = document.querySelector('#buttonTotal');
 
   button.addEventListener('click', function soma() {
-
     let soma = 0;
-
     const spans = document.querySelectorAll('#span-valor');
-
     spans.forEach((span, sum) => {
-
       sum = parseFloat(span.textContent);
-
       if (!isNaN(sum)) {
         soma += sum;
       };
     });
-    const p = document.createElement('p');
+  const p = document.createElement('p');
     p.id = 'paragraphValorTotal';
     p.textContent = `Valor Total: ${parseFloat(soma).toFixed(2)}`;
     p.setAttribute('style', 'color: #ff6347');
