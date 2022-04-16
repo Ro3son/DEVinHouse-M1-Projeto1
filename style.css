@@ -116,13 +116,9 @@ ul {
   padding: 8px;
   gap: 1em;
   border-radius: 10px;
-  list-style-type: none;
-}
-
-li {
+  list-style-type: none;  
   color: #d9eee1;
 }
-
 label {
   font-size: 1.3em;
   padding: 6px;
