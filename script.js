@@ -68,7 +68,6 @@ const deletaLista = () => {
     btn.addEventListener('click', remove);
     function remove() {
       this.parentElement.remove();  // remove <li> da função adicionaLista() //
-      document.querySelector('#confirm-span').remove(); // remove <span> da função confirmaValor() //
     };
   };
 };
@@ -147,6 +146,12 @@ const confirmaValor = () => {
     document.querySelector('.paragraph').appendChild(p);
     document.querySelector('.descValor').style.backgroundColor = '#2b2a33';
 
+    const button = document.createElement('button');
+    button.id = 'buttonTotal';
+    button.textContent = 'Fechar Pedido';
+    document.querySelectorAll('#buttonTotal').forEach(button => { button.remove() });
+    document.querySelector('.btnTotal').appendChild(button);
+
     limpaInput(); // Limpa saída  //
     valorTotal();
   });
@@ -154,4 +159,29 @@ const confirmaValor = () => {
 
 const valorTotal = () => {
 
+  const button = document.querySelector('#buttonTotal');
+
+  button.addEventListener('click', function soma() {
+
+    let soma = 0;
+
+    const spans = document.querySelectorAll('#span-valor');
+
+    spans.forEach((span, sum) => {
+
+      sum = parseFloat(span.textContent);
+
+      if (!isNaN(sum)) {
+        soma += sum;
+      };
+    });
+    const p = document.createElement('p');
+    p.id = 'paragraphValorTotal';
+    p.textContent = `Valor Total: ${parseFloat(soma).toFixed(2)}`;
+    p.setAttribute('style', 'color: #ff6347');
+
+    document.querySelectorAll('#paragraphValorTotal').forEach(p => { p.remove() });
+    document.querySelector('.btnTotal').appendChild(p);
+    document.querySelector('#buttonTotal').remove();
+  });
 };
