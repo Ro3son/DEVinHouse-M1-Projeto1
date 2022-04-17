@@ -24,10 +24,6 @@ fornecerá diversos gifs que podem ser exibidos para o usuário com você achar
 melhor
 b. Este item concede um ponto extra, mas não altera o limite de pontos!
 
-<p>
- 🚀 Em construção... 🚧 
-</p>
-
 #### Exemplo desta aplicação
 ![img1](https://github.com/Ro3son/DEVinHouse-M1-Projeto1/blob/main/imgs/img1.png)
 ![img2](https://github.com/Ro3son/DEVinHouse-M1-Projeto1/blob/main/imgs/img2.png)
@@ -35,6 +31,14 @@ b. Este item concede um ponto extra, mas não altera o limite de pontos!
 ![img4](https://github.com/Ro3son/DEVinHouse-M1-Projeto1/blob/main/imgs/img4.png)
 ![img5](https://github.com/Ro3son/DEVinHouse-M1-Projeto1/blob/main/imgs/img5.png)
 ![img6](https://github.com/Ro3son/DEVinHouse-M1-Projeto1/blob/main/imgs/img6.png)
+
+
+**_Agradecimento as aulas e aos professores._**
+
+<p>
+ 🚀 Concluído 🚧 
+</p>
+
 
 #### Referências que ajudaram a construir este projeto:
 
@@ -48,10 +52,6 @@ b. Este item concede um ponto extra, mas não altera o limite de pontos!
 
 [Moderncss custom checkbox](https://moderncss.dev/pure-css-custom-checkbox-style/).
 
-[Javascripttutorial localStorage](https://www.javascripttutorial.net/web-apis/javascript-localstorage/).
-
-[Stackoverflow about localStorage](https://stackoverflow.com/questions/37483144/how-to-store-multiple-items-on-local-storage-when-a-button-is-clicked).
+[Stackoverflow about localStorage](https://stackoverflow.com/questions/24544861/how-to-create-a-multiple-values-for-a-single-key-using-local-storage).
 
 [Stackoverflow about append multiple items](https://stackoverflow.com/questions/36798005/append-multiple-items-in-javascript/45215917).
-
-[Stackoverflow about cross out checkbox](https://stackoverflow.com/questions/56928678/cross-out-text-when-checkbox-is-checked).
