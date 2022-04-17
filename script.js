@@ -5,6 +5,18 @@ const adicionaLista = () => {
 
     const inputItem = document.getElementById('inputAdd');
 
+    let inputValue = inputItem.value;
+
+    const itens = [];
+    
+    itens.push(inputValue);
+
+    localStorage.setItem('Item', JSON.stringify({itens}));
+
+    let test = JSON.parse(localStorage.getItem('item'));
+
+    console.log(test);
+    
     let input, label, button;
 
     const li = document.createElement('li');
