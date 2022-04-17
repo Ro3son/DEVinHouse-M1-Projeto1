@@ -4,19 +4,9 @@ const adicionaLista = () => {
   button.addEventListener('click', () => {
 
     const inputItem = document.getElementById('inputAdd');
+    // localStorage //
+    let armazena = localStorage.itens += JSON.stringify({ 'Item': inputItem.value });
 
-    let inputValue = inputItem.value;
-
-    const itens = [];
-    
-    itens.push(inputValue);
-
-    localStorage.setItem('Item', JSON.stringify({itens}));
-
-    let test = JSON.parse(localStorage.getItem('item'));
-
-    console.log(test);
-    
     let input, label, button;
 
     const li = document.createElement('li');
@@ -181,7 +171,7 @@ const valorTotal = () => {
         soma += sum;
       };
     });
-  const p = document.createElement('p');
+    const p = document.createElement('p');
     p.id = 'paragraphValorTotal';
     p.textContent = `Valor Total: ${parseFloat(soma).toFixed(2)}`;
     p.setAttribute('style', 'color: #ff6347');
