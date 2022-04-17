@@ -2,7 +2,7 @@
 ## O objetivo deste projeto é desenvolver uma aplicação web para controle e cálculo de uma lista de compras.
 ### Requisitos da Aplicação:
 1. Um título na aba do navegador, para que o usuário encontre a sua aplicação no meio
-das várias abas que constantemente mantém abertas. - [x]
+das várias abas que constantemente mantém abertas. - [x] Feito
 2. Um cabeçalho dentro da página, para que o usuário saiba facilmente em que página se
 encontra e do que se trata o conteúdo.
 3. Um campo de texto para digitar o nome do produto a ser adicionado à lista.
