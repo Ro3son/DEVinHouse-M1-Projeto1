@@ -36,14 +36,22 @@ b. Este item concede um ponto extra, mas não altera o limite de pontos!
 ![img5](https://github.com/Ro3son/DEVinHouse-M1-Projeto1/blob/main/imgs/img5.png)
 ![img6](https://github.com/Ro3son/DEVinHouse-M1-Projeto1/blob/main/imgs/img6.png)
 
-Referências que ajudaram a construir este projeto:
+#### Referências que ajudaram a construir este projeto:
 
-[Javascript.info](https://javascript.info/localstorage)
-[MDN web docs](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/localStorage)
-[MDN web docs checkbox](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input/checkbox)
-[MDN web docs nodeList](https://developer.mozilla.org/pt-BR/docs/Web/API/NodeList)
-[moderncss custom checkbox](https://moderncss.dev/pure-css-custom-checkbox-style/)
-[javascripttutorial localstorage](https://www.javascripttutorial.net/web-apis/javascript-localstorage/)
-[Stackoverflow about localStorage](https://stackoverflow.com/questions/37483144/how-to-store-multiple-items-on-local-storage-when-a-button-is-clicked) 
-[Stackoverflow about append multiple items](https://stackoverflow.com/questions/36798005/append-multiple-items-in-javascript/45215917) 
-[Stackoverflow about cross out checkbox](https://stackoverflow.com/questions/56928678/cross-out-text-when-checkbox-is-checked)
+[Javascript.info](https://javascript.info/localstorage).
+
+[MDN web docs](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/localStorage).
+
+[MDN web docs checkbox](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input/checkbox).
+
+[MDN web docs nodeList](https://developer.mozilla.org/pt-BR/docs/Web/API/NodeList).
+
+[Moderncss custom checkbox](https://moderncss.dev/pure-css-custom-checkbox-style/).
+
+[Javascripttutorial localStorage](https://www.javascripttutorial.net/web-apis/javascript-localstorage/).
+
+[Stackoverflow about localStorage](https://stackoverflow.com/questions/37483144/how-to-store-multiple-items-on-local-storage-when-a-button-is-clicked).
+
+[Stackoverflow about append multiple items](https://stackoverflow.com/questions/36798005/append-multiple-items-in-javascript/45215917).
+
+[Stackoverflow about cross out checkbox](https://stackoverflow.com/questions/56928678/cross-out-text-when-checkbox-is-checked).
